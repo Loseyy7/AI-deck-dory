@@ -39,6 +39,8 @@ python3 network_generate.py Quantlab PULP.GAP8 \
 
 docker run --rm -it \ -v $PWD:/module \ -w /module \ bitcraze/aideck \ bash -c " export GAP_SDK_HOME=/gap_sdk && \ export GAP_TARGET=GAPOC_B_V2 && \ source /gap_sdk/configs/gapoc_b_v2.sh && \ make clean all platform=gvsoc CORE=8 "
 
+*Use crazyradio to connect
+
 cfloader flash \ BUILD/GAP8_V2/GCC_RISCV_PULPOS/main \ deck-bcAI:gap8-fw \ -w radio://0/80/2M/E7E7E7E7E7
 
 
