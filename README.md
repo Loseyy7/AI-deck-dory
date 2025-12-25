@@ -10,9 +10,10 @@ git submodule update --remote --init dory/dory_examples
 git submodule update --remote --init dory/Hardware_targets/PULP/Backend_Kernels/pulp-nn
 git submodule update --remote --init dory/Hardware_targets/PULP/Backend_Kernels/pulp-nn-mixed
 python3 -m pip install -e .
+Fix Setup.py (if needed)
 
-If an error about setuptools is reported, modify setup.py
-setup.py
+If an error about setuptools is reported, modify setup.py:python
+
 from setuptools import setup, Extension
 import setuptools # add this
 import os
@@ -25,13 +26,13 @@ setup(name='dory',
       author_email='alessio.burrello@unibo.com',
       license='MIT',
       packages=setuptools.find_packages(),
-	    python_requires='>=3.5',
-	    install_requires=[
-	        "onnx",
-	        "numpy",
-              "ortools",
-              "mako"
-	    ],
+      python_requires='>=3.5',
+      install_requires=[
+          "onnx",
+          "numpy",
+          "ortools",
+          "mako"
+      ],
       package_data={"": ['Makefile*'], "": ['*.[json,c,h]']},
       include_package_data=True,
       zip_safe=False)
